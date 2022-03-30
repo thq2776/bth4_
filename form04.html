@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>FORM 04</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" href="style.css">
+	<script src="check.js"></script>
+</head>
+
+<body>
+	<form name="f" action="https:/fit.agu.edu.vn/demo.php" method="get"></form>
+		<table border="0" width="" align="center">
+			<tr>
+				<th colspan="2">THONG TIN CA NHAN</th>
+			</tr>
+			<tr>
+				<td>Ho va ten:</td>
+				<td><input type="text" name="Hovaten"</td>
+			</tr>
+			<tr>
+				<td>ngay sinh:</td>
+				<td>
+					<select name="Ngay">
+						<option>Ngay</option>
+						<script>
+							for(var i=1;i<=31;i++)
+							{
+								document.write('<option>'+i+'<\option>')
+							}
+						</script>
+					</select>
+
+					<select name="thang">
+						<option>Thang</option>
+						<script>
+							for(var i=1;i<=12;i++)
+							{
+								document.write('<option>'+i+'<\option>')
+							}
+						</script>
+					</select>
+					
+					<select name="Nam">
+						<option>Nam</option>
+						<script>
+							var d=new Date();
+							var nam=d.getFullYear();
+							for(var i=1969;i<=nam;i++)
+							{
+								document.write('<option>'+i+'<\option>')
+							}
+						</script>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td>Gioi tinh</td>
+				<td>
+					<input type="radio" name="GioiTinh" value="Nam" checked="true">Nam
+					<input type="radio" name="GioiTinh" value="Nu">Nu
+					<input type="radio" name="GioiTinh" value="Chua ro">Chua ro
+				</td>
+			</tr>
+			<tr>
+				<td>Nghe nghiep</td>
+				<td>
+				<select name="Nghe Nghiep">
+					<option>Chon</option>
+					<option>Bac si</option>
+					<option>Ky su</option>
+					<option>giao vien</option>
+					<option selected="true">sinh vien</option>
+				</select>
+				</td>
+			</tr>
+			<tr>
+				<td>ghi chu</td>
+				<td>
+
+				<textarea name="ghichu"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td>
+					<button onclick="return check()">Dang ky</button>
+					<button type="reset">Xoa</button>
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+
+</html>
